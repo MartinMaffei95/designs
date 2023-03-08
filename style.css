@@ -17,7 +17,7 @@
   --bBot: calc(var(--boxHeight) / 2);
 
   /* light effect */
-  --onColor: white;
+  --onColor: #fff;
   --offColor: rgb(197, 197, 197);
 }
 
@@ -53,22 +53,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 /* ## BOX INTERCALATED STYLE */
 .box:nth-child(1n) {
   transform: perspective(var(--perspectivePx)) rotateY(var(--rotateDeg));
-  transform-style: flat;
   box-shadow: var(--shadowTranslateX) var(--shadowTranslateY) var(--shadowSize)
     var(--shadowColor);
 }
 .box:nth-child(2n) {
-  transform: perspective(900px)
-    rotateY(calc(var(--rotateDeg) - (var(--rotateDeg) * 2)));
-  box-shadow: calc(var(--shadowTranslateX) - calc(var(--shadowTranslateX) * 2))
-    var(--shadowTranslateY) var(--shadowSize) var(--shadowColor);
-  transform-style: flat;
+  transform: perspective(var(--perspectivePx))
+    rotateY(calc(var(--rotateDeg) * -1));
+  box-shadow: calc(var(--shadowTranslateX) * -1) var(--shadowTranslateY)
+    var(--shadowSize) var(--shadowColor);
   flex-direction: row-reverse;
 }
 
@@ -110,7 +107,7 @@
 .box .sector:nth-child(1) {
   flex-basis: calc(var(--boxWidth) / 2);
   font-size: 1.15rem;
-  color: white;
+  color: var(--onColor);
   text-shadow: rgba(255, 255, 255, 0.568) 0px 0px 5px;
   animation: littleTwinkle 3s linear infinite;
   animation-delay: 1s;
@@ -119,25 +116,16 @@
 .box .sector:nth-child(2) {
   margin-inline: auto;
   font-size: 4rem;
-  color: white;
-  text-shadow: white 0px 0px 10px;
+  color: var(--onColor);
+  text-shadow: var(--onColor) 0px 0px 10px;
 }
 .box .sector:nth-child(3) {
   flex-basis: calc(var(--boxWidth) / 2);
   font-size: 3rem;
-  color: white;
+  color: var(--onColor);
   text-shadow: rgb(255, 255, 255) 0px 0px 2px;
   animation: littleTwinkle 2s linear infinite;
   animation-delay: -1s;
-}
-
-/* deprecated */
-.box:nth-child(1n) .peak {
-  display: none;
-}
-
-.box:nth-child(2n) .peak {
-  display: none;
 }
 
 /* Hover styling */
