@@ -87,6 +87,8 @@ First prepare our environment. Create a basic normalize for the document and let
 }
 ```
 
+[container_styled](https://github.com/MartinMaffei95/designs/blob/main/public/css-container.png?raw=true)
+
 Now We define our variables, in this case we define
 
 ```css
@@ -95,6 +97,7 @@ Now We define our variables, in this case we define
   --perspectivePx: 750px; /* =>> the distance between the z plane and the user */
   --boxWidth: 70%;
   --boxHeight: 15vh;
+}
 ```
 
 > Perspective it's hard concept at first. Read the [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective) about that and use the propery to understand how really work
@@ -122,6 +125,8 @@ The .box general style
 }
 ```
 
+[basic_style](https://raw.githubusercontent.com/MartinMaffei95/designs/main/public/css-box-effect-one.png)
+
 Here is the trick. Intercalate in boxes the `transform` property
 
 ```css
@@ -136,6 +141,8 @@ Here is the trick. Intercalate in boxes the `transform` property
   flex-direction: row-reverse; /* This invert our div */
 }
 ```
+
+[perspective_effect](https://github.com/MartinMaffei95/designs/blob/main/public/css-box-first%20effect.png?raw=true)
 
 > This is all about effect the we looking for. The rest of the code is only for style this proyect
 
@@ -169,6 +176,8 @@ Now we add color!
 }
 ```
 
+[colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/public/css-box-with-color.png?raw=true)
+
 > Put the `z-index` for create a superposition between the box and top box
 
 We add a shadows now. First declare the variables
@@ -198,6 +207,8 @@ In this step use the variables in the shadows and `z-index` of boxes to create t
 }
 ```
 
+[colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/public/css-box-with-shadows.png?raw=true)
+
 Now we give some love to the items inside the boxes _( the .sector divs )_  
 First the general style
 
@@ -209,6 +220,8 @@ First the general style
   align-items: center;
 }
 ```
+
+[basic_sector_style](https://github.com/MartinMaffei95/designs/blob/main/public/css-sector-basic.png?raw=true)
 
 And give a particular style for every sector. Some important items here:  
  `flex-basis: calc(var(--boxWidth) / 2);` in Child(1 & 3): Divide space of the div between this two divs  
@@ -240,6 +253,8 @@ And give a particular style for every sector. Some important items here:
   animation-delay: -1s;
 }
 ```
+
+[basic_sector_style](https://github.com/MartinMaffei95/designs/blob/main/public/css-sector-light-effect.png?raw=true)
 
 ### Animations
 
@@ -328,6 +343,8 @@ We use this effect in hover. Rotate the box and play _-again-_ the light effect
   animation-delay: 0s;
 }
 ```
+
+[gif](https://github.com/MartinMaffei95/designs/blob/main/public/GifMaker_20230308130127003.gif?raw=true)
 
 ### Responsive
 
