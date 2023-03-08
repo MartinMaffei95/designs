@@ -210,7 +210,7 @@ In this step use the variables in the shadows and `z-index` of boxes to create t
 ![colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/img/css-box-with-shadows.png?raw=true)
 
 Now we give some love to the items inside the boxes _( the .sector divs )_  
-First the general style
+First the general style.
 
 ```css
 .box .sector {
