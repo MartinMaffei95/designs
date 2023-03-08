@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+  --rotateDeg: 15deg;
+  --perspectivePx: 750px;
+  --boxWidth: 70%;
+  --boxHeight: 15vh;
+
+  /* shadow effect */
+  --shadowTranslateX: -5px;
+  --shadowTranslateY: 15px;
+  --shadowSize: 15px 1px;
+  --shadowColor: #00000096;
+
+  /* Triangle */
+  --bLeft: 35px;
+  --bTop: calc(var(--boxHeight) / 2);
+  --bBot: calc(var(--boxHeight) / 2);
+
+  /* light effect */
+  --onColor: white;
+  --offColor: rgb(197, 197, 197);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.container {
+  background: linear-gradient(rgb(142, 92, 186), 25%, rgb(39, 26, 52));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/*  BOX STYLES  */
+.box {
+  width: var(--boxWidth);
+  min-height: var(--boxHeight);
+  max-height: var(--boxHeight);
+  background: linear-gradient(to left, #199a69, #7abfa4);
+  cursor: pointer;
+
+  overflow: hidden;
+  padding-inline: 4%;
+  padding-block: 2%;
+  /* Flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* ## BOX INTERCALATED STYLE */
+.box:nth-child(1n) {
+  transform: perspective(var(--perspectivePx)) rotateY(var(--rotateDeg));
+  transform-style: flat;
+  box-shadow: var(--shadowTranslateX) var(--shadowTranslateY) var(--shadowSize)
+    var(--shadowColor);
+}
+.box:nth-child(2n) {
+  transform: perspective(900px)
+    rotateY(calc(var(--rotateDeg) - (var(--rotateDeg) * 2)));
+  box-shadow: calc(var(--shadowTranslateX) - calc(var(--shadowTranslateX) * 2))
+    var(--shadowTranslateY) var(--shadowSize) var(--shadowColor);
+  transform-style: flat;
+  flex-direction: row-reverse;
+}
+
+/* ## BOX COLOR  */
+.box:nth-child(1) {
+  z-index: 60;
+  background: linear-gradient(to left, #31760e, #51d410);
+}
+.box:nth-child(2) {
+  z-index: 50;
+  background: linear-gradient(to right, #0e7676, #1ccccc);
+}
+.box:nth-child(3) {
+  z-index: 40;
+  background: linear-gradient(to left, #760e0e, #ca1717);
+}
+.box:nth-child(4) {
+  z-index: 30;
+  background: linear-gradient(to right, #676b12, #dce61e);
+}
+.box:nth-child(5) {
+  z-index: 20;
+  background: linear-gradient(to left, #891676, #e925c8);
+}
+.box:nth-child(6) {
+  z-index: 10;
+  background: linear-gradient(to right, #a2530e, #f77502);
+}
+
+/* ## TEXT ON BOX  */
+
+.box .sector {
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .sector:nth-child(1) {
+  flex-basis: calc(var(--boxWidth) / 2);
+  font-size: 1.15rem;
+  color: white;
+  text-shadow: rgba(255, 255, 255, 0.568) 0px 0px 5px;
+  animation: littleTwinkle 3s linear infinite;
+  animation-delay: 1s;
+  letter-spacing: 1px;
+}
+.box .sector:nth-child(2) {
+  margin-inline: auto;
+  font-size: 4rem;
+  color: white;
+  text-shadow: white 0px 0px 10px;
+}
+.box .sector:nth-child(3) {
+  flex-basis: calc(var(--boxWidth) / 2);
+  font-size: 3rem;
+  color: white;
+  text-shadow: rgb(255, 255, 255) 0px 0px 2px;
+  animation: littleTwinkle 2s linear infinite;
+  animation-delay: -1s;
+}
+
+/* deprecated */
+.box:nth-child(1n) .peak {
+  display: none;
+}
+
+.box:nth-child(2n) .peak {
+  display: none;
+}
+
+/* Hover styling */
+
+.box:hover {
+  transition: transform 0.1s linear;
+  transform: rotateY(var(--rotateDeg));
+}
+
+.box:hover .sector:nth-child(1) {
+  animation: littleTwinkle 2s linear infinite;
+  animation-delay: 1s;
+}
+.box:hover .sector:nth-child(3) {
+  animation: littleTwinkle 1s linear infinite;
+  animation-delay: 0s;
+}
+
+/* complex hover */
+.box:hover .sector:nth-child(2) {
+  color: var(--onColor);
+  text-shadow: var(--onColor) 0 0 10px;
+  animation: bigTwinkle 10s linear infinite, littleTwinkle 1s linear infinite;
+}
+
+/* keyframes */
+@keyframes bigTwinkle {
+  0% {
+    text-shadow: var(--onColor) 0 0 10px;
+    color: var(--onColor);
+  }
+  1% {
+    text-shadow: var(--offColor) 0 0 00px;
+    color: var(--offColor);
+  }
+  2%,
+  40% {
+    text-shadow: var(--onColor) 0 0 10px;
+    color: var(--onColor);
+  }
+  41% {
+    text-shadow: var(--offColor) 0 0 00px;
+    color: var(--offColor);
+  }
+  42% {
+    text-shadow: var(--onColor) 0 0 10px;
+    color: var(--onColor);
+  }
+  43% {
+    text-shadow: var(--offColor) 0 0 00px;
+    color: var(--offColor);
+  }
+  44%,
+  100% {
+    text-shadow: var(--onColor) 0 0 10px;
+    color: var(--onColor);
+  }
+}
+@keyframes littleTwinkle {
+  0% {
+    text-shadow: var(--offColor) 0 0 00px;
+  }
+  25% {
+    text-shadow: var(--offColor) 0 0 04px;
+  }
+  50% {
+    text-shadow: var(--offColor) 0 0 10px;
+  }
+  75% {
+    text-shadow: var(--offColor) 0 0 02px;
+  }
+  100% {
+    text-shadow: var(--offColor) 0 0 10px;
+  }
+}
+
+/* BreakPoints */
+@media (max-width: 960px) {
+  /* ## TEXT ON BOX  */
+
+  .box .sector:nth-child(1) {
+    font-size: 1rem;
+    letter-spacing: 0.7px;
+  }
+  .box .sector:nth-child(2) {
+    font-size: 4rem;
+  }
+  .box .sector:nth-child(3) {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 750px) {
+  /* ## TEXT ON BOX  */
+
+  .box .sector:nth-child(1) {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  .box .sector:nth-child(2) {
+    font-size: 4rem;
+  }
+  .box .sector:nth-child(3) {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 550px) {
+  /* ## TEXT ON BOX  */
+
+  .box .sector:nth-child(1) {
+    font-size: 0.7rem;
+    letter-spacing: 0.7px;
+  }
+  .box .sector:nth-child(2) {
+    font-size: 3rem;
+  }
+  .box .sector:nth-child(3) {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 450px) {
+  /* ## TEXT ON BOX  */
+
+  .box .sector:nth-child(1) {
+    font-size: 0.6rem;
+    letter-spacing: 0.7px;
+  }
+  .box .sector:nth-child(2) {
+    font-size: 3rem;
+  }
+  .box .sector:nth-child(3) {
+    font-size: 2.5rem;
+  }
+}
