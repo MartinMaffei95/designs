@@ -87,7 +87,7 @@ First prepare our environment. Create a basic normalize for the document and let
 }
 ```
 
-![container_styled](https://github.com/MartinMaffei95/designs/blob/main/public/css-container.png?raw=true)
+![container_styled](https://github.com/MartinMaffei95/designs/blob/main/img/css-container.png?raw=true)
 
 Now We define our variables, in this case we define
 
@@ -125,7 +125,7 @@ The .box general style
 }
 ```
 
-![basic_style](https://raw.githubusercontent.com/MartinMaffei95/designs/main/public/css-box-effect-one.png)
+![basic_style](https://raw.githubusercontent.com/MartinMaffei95/designs/main/img/css-box-effect-one.png)
 
 Here is the trick. Intercalate in boxes the `transform` property
 
@@ -142,7 +142,7 @@ Here is the trick. Intercalate in boxes the `transform` property
 }
 ```
 
-![perspective_effect](https://github.com/MartinMaffei95/designs/blob/main/public/css-box-first%20effect.png?raw=true)
+![perspective_effect](https://github.com/MartinMaffei95/designs/blob/main/img/css-box-first%20effect.png?raw=true)
 
 > This is all about effect the we looking for. The rest of the code is only for style this proyect
 
@@ -176,7 +176,7 @@ Now we add color!
 }
 ```
 
-![colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/public/css-box-with-color.png?raw=true)
+![colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/img/css-box-with-color.png?raw=true)
 
 > Put the `z-index` for create a superposition between the box and top box
 
@@ -207,7 +207,7 @@ In this step use the variables in the shadows and `z-index` of boxes to create t
 }
 ```
 
-![colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/public/css-box-with-shadows.png?raw=true)
+![colors_styled_apllied](https://github.com/MartinMaffei95/designs/blob/main/img/css-box-with-shadows.png?raw=true)
 
 Now we give some love to the items inside the boxes _( the .sector divs )_  
 First the general style
@@ -221,7 +221,7 @@ First the general style
 }
 ```
 
-![basic_sector_style](https://github.com/MartinMaffei95/designs/blob/main/public/css-sector-basic.png?raw=true)
+![basic_sector_style](https://github.com/MartinMaffei95/designs/blob/main/img/css-sector-basic.png?raw=true)
 
 And give a particular style for every sector. Some important items here:  
  `flex-basis: calc(var(--boxWidth) / 2);` in Child(1 & 3): Divide space of the div between this two divs  
@@ -254,7 +254,7 @@ And give a particular style for every sector. Some important items here:
 }
 ```
 
-![basic_sector_style](https://github.com/MartinMaffei95/designs/blob/main/public/css-sector-light-effect.png?raw=true)
+![basic_sector_style](https://github.com/MartinMaffei95/designs/blob/main/img/css-sector-light-effect.png?raw=true)
 
 ### Animations
 
@@ -344,7 +344,7 @@ We use this effect in hover. Rotate the box and play _-again-_ the light effect
 }
 ```
 
-![gif](https://github.com/MartinMaffei95/designs/blob/main/public/GifMaker_20230308130127003.gif?raw=true)
+![gif](https://github.com/MartinMaffei95/designs/blob/main/img/GifMaker_20230308130127003.gif?raw=true)
 
 ### Responsive
 
